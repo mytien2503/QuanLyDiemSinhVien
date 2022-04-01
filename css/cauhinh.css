@@ -1,0 +1,71 @@
+body{
+		background-image: url("/images/nen1.jpg");
+		background-position: center center;
+		background-attachment: fixed;
+		background-size: 100%;
+	}
+#khungtrang{
+		margin:auto;
+		width: 90%;
+		background-color: #f0fff0;
+		opacity:0.8; /*Do mo`*/
+		border: thin silver solid;
+		border-radius: 10px;
+		padding:20px;
+	}
+#tua{
+		font-size:25pt;
+		font-weight:bold;
+		font-style: italic;
+		color:Blue;
+		text-shadow: 3px 3px 3px darkgray;
+	}
+nav div#phanmenungang a{
+		color:red;
+		
+	}
+table#thongtin{
+		margin:auto;
+		width: 50%;
+	}
+#trai{
+	width: 200px;
+	border-right: thin solid #009933;
+	float: left;
+}
+#phai{
+	width: 200px;
+	border-right: thin solid #009933;
+	float: right;
+}
+#giua{
+	width: 600px;
+	border-right: thin solid #009933;
+	float: left;
+}
+#duoi{
+	clear: both;
+	float: center;
+	
+}
+.giua .thongtin .card-header
+{
+	margin:auto;
+	text-align:center;
+	width:50%;
+}
+.thongtin
+{	
+	text-align:center;
+}
+table#thongtin{
+	background-color:white;
+}
+#tintuc{
+	color:red;
+	text-shadow: 3px 3px 3px darkgray;
+}
+#ngaydangtin{
+	float:right;
+	font-style: italic;
+}

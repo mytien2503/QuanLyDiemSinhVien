@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<?php include "head.php"; ?>
+	<body>	
+		<div id="khungtrang">			
+			
+			<h5 class="card-header">Xử lý thêm</h5>
+		</div>
+		<?php include "javascript.php"; ?>
+		<script>
+		var tb=0;
+		function chuyenngay(){
+			var date="<?php echo $_POST['ngaysinh']; ?>";
+			/*var res1 = date.replace("/", ",");
+			var res2=res1.replace("/", ",")*/
+			
+			var ar= new Array();
+			ar = date.split("/");
+			var d=ar[1]+"/"+ar[0]+"/"+ar[2];
+			return d;
+		}
+		db.collection("sinhvien").get().then((querySnapshot) => {
+			querySnapshot.forEach((doc) => {
+								if(tb==0)
+								{
+									db.collection("sinhvien").add({
+									Mssv: "<?php echo $_POST['mssv']; ?>",
+									Holot: "<?php echo $_POST['holot']; ?>",
+									Ten:"<?php echo $_POST['ten']; ?>",
+									Lop:"<?php echo $_POST['lop']; ?>",
+									Gioitinh:"<?php echo $_POST['gioitinh']; ?>",
+									Ngaysinh:  firebase.firestore.Timestamp.fromDate(new Date(chuyenngay())),
+									email: "<?php echo $_POST['email']; ?>"
+								})
+								.then((docRef) => {
+									//console.log("Document written with ID: ", docRef.id);
+									location.href="xemdssv.php";
+								})
+								.catch((error) => {
+									console.error("Error adding document: ", error);
+								});
+								tb++;
+								}								
+				});
+			});
+		</script>
+		<?php include "footer.php"; ?>
+	</body>
+</html>
